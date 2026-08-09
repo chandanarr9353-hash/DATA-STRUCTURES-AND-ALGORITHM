@@ -22,3 +22,25 @@ int longest_subarray(int arr[],int n,int k){
         }
     }
 }
+
+//optimal approach
+int subarray(int arr[],int k,int n){
+    int l=0,r=0,maxlen=0,zeros=0;
+    while(r<n){
+        if (arr[r]==0){
+            zeros++;
+        }
+     
+        while (zeros>k){
+            if (arr[l]==0){
+                zeros--;
+            }
+            l++;          
+        }
+    
+        if (zeros<=k){
+            maxlen=max(maxlen,r-l+1);
+        }
+        r++;
+    }
+}
