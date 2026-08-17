@@ -30,7 +30,7 @@ int subarray(int arr[],int k,int n){
         if (arr[r]==0){
             zeros++;
         }
-     
+    
         while (zeros>k){
             if (arr[l]==0){
                 zeros--;

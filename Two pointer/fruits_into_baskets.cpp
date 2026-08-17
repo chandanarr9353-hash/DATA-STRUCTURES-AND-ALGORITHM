@@ -3,8 +3,7 @@
 #include <vector>
 #include <set>
 #include <map>
-using namespace std;
-
+using namespace std; 
 //max length subarray with atmost 2 types of numbers
 int brute_force(int arr[],int n){
     int maxlen=0;

@@ -12,7 +12,7 @@ int maxarr(int arr[],int k,int n ){
     for (int i=k;i<n;i++){
         sum=sum+arr[i]-arr[i-k];
         maxsum=max(maxsum,sum);
-
+        
     }
     
 }
