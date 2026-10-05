@@ -1,8 +1,7 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <stack>
 using namespace std;
 
-
-//reverse a dll only in terms of data
 class Node{
     public:
     int data;
@@ -13,7 +12,7 @@ class Node{
     Node(int data1,Node* next1,Node* back1){
         data =data1;
         next=next1;
-        back=back1;  
+        back=back1;
 
     }
 
@@ -25,13 +24,12 @@ class Node{
     }
 }; 
 
-
-Node* reversedll(Node* head){
+Node* reverse(Node* head){
     Node* temp=head;
-    stack <int> st;
+    stack<int> st;
     while(temp!=NULL){
         st.push(temp->data);
-        temp=temp->next;     
+        temp=temp->next;
     }
     temp=head;
     while(temp!=NULL){
@@ -41,72 +39,22 @@ Node* reversedll(Node* head){
     }
 }
 
-Node* reverseadll(Node* head){
-    Node* last=NULL;
-    Node* current=head;
-    while(current!=NULL){
-        last=current->back;
-        current->back=current->next;
-        current->next=last;
-        current=current->back;
-    }
+Node* optimal(Node* head){
+    if(head==NULL || head->next==NULL) return head;
+    Node* temp=head;
+    Node* prev=NULL;
+    Node* front=temp->next;
+    while(temp!=NULL){
+        temp->next=prev;
+        prev=temp;
+        temp=front;
+
+        if(front!=NULL){
+            front=front->next;
+        }
+        
+    return prev;
+
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
+}

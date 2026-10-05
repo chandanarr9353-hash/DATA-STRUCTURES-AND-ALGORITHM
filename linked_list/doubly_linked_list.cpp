@@ -13,7 +13,7 @@ class Node{
         data =data1;
         next=next1;
         back=back1;
-
+ 
     }
 
     public:

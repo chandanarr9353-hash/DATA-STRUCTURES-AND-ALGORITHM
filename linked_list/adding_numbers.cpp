@@ -25,7 +25,7 @@ Node* adding_numbers(Node* head1,Node* head2){
             sum+=temp2->data;
         }
         Node* newnode=new Node(sum%10,NULL);
-        carry=sum%10;
+        carry=sum/10;
         curr->next=newnode;
         curr=curr->next;
 
